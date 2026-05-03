@@ -1,0 +1,4 @@
+heres the code i used for the camera. 
+
+i relied heavily on indrekkluk's youtube video, using his arduino code and his arduimagecapture plugin for testing. 
+i used loveable to create the website.
