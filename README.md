@@ -12,7 +12,7 @@ OV7670 Camera \
 Breadboard \
 
 circuit 2: \
-HC-05 Bluetooth \ 
+HC-05 Bluetooth \
 Arduino UNO R3 \
 Servo motor SG90 \
 Breadboard \
