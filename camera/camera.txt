@@ -6,5 +6,10 @@ i used loveable to create the website.
 https://id-preview--d1acd5a2-8328-42bd-b843-045cfea69a57.lovable.app/
 due to the ai having a high bias towards forks, i made the threshold for a spoon 48% and for a fork, 80%.
 they must remain at their threshold (or above) for 4 seconds before the signal is sent to the servo to carry out movement.
-
 green screen for a few seconds when you connect to the arduino means the camera is initiating.
+
+refer to this video for plugins & code:
+https://youtu.be/R94WZH8XAvM?si=1RCJwU-Zx7YtOWka
+
+demonstration is in camera.mp4.
+p.s. its worth noting that the fps of the camera is extremely slow when its connected to arduino.
