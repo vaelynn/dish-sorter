@@ -25,3 +25,5 @@ Battery holder \
 \
 credentials:\
 -teachable machine ai trained by yashwini \
+
+each folder in this repository is provided with a .txt file briefly explaining the contents, along with a demonstration video.
