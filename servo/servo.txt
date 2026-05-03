@@ -1,0 +1,3 @@
+heres the arduino code for the servo motor and hc05. 
+
+servo.mp4 will be a demonstration of the code.
