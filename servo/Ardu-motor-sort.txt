@@ -1,0 +1,123 @@
+﻿Full Code
+#include <Servo.h>
+#include <SoftwareSerial.h>
+
+
+SoftwareSerial BT(10, 11);  // RX=10, TX=11
+
+
+Servo myServo;
+
+
+const int SERVO_PIN = 9;
+
+
+int currentPos = 90;
+
+
+void setup() {
+  BT.begin(9600);
+  myServo.attach(SERVO_PIN);
+  myServo.write(90);
+  delay(500);
+}
+
+
+void loop() {
+  if (BT.available() > 0) {
+    char input = BT.read();
+
+
+    if (input == '1') {
+      for (int pos = currentPos; pos <= 180; pos++) {
+        myServo.write(pos);
+        delay(5);
+      }
+      currentPos = 180;
+
+
+    } else if (input == '2') {
+      for (int pos = currentPos; pos >= 0; pos--) {
+        myServo.write(pos);
+        delay(5);
+      }
+      currentPos = 0;
+
+
+    } else if (input == '3') {
+      if (currentPos < 90) {
+        for (int pos = currentPos; pos <= 90; pos++) {
+          myServo.write(pos);
+          delay(5);
+        }
+      } else {
+        for (int pos = currentPos; pos >= 90; pos--) {
+          myServo.write(pos);
+          delay(5);
+        }
+      }
+      currentPos = 90;
+    }
+  }
+}
+
+
+________________
+
+
+Wiring
+Battery → Arduino:
+Battery
+	Arduino
+	+ (red)
+	VIN
+	- (black)
+	GND
+	Arduino → Breadboard rails:
+Arduino
+	Breadboard
+	5V
+	red rail
+	GND
+	blue rail
+	HC-05 → Breadboard + Arduino:
+HC-05
+	Where
+	VCC
+	breadboard red rail
+	GND
+	breadboard blue rail
+	TXD
+	Arduino Pin 10
+	RXD
+	Arduino Pin 11 ⚠️
+	⚠️ Pin 11 (RXD) — HC-05 is 3.3V logic, use a voltage divider with a 1kΩ + 2kΩ resistor between Pin 11 and HC-05 RXD to avoid damaging it.
+Servo → Breadboard + Arduino:
+Servo
+	Where
+	Red
+	breadboard red rail
+	Brown/Black
+	breadboard blue rail
+	Yellow
+	Arduino Pin 9
+	________________
+
+
+Commands
+Send
+	Action
+	1
+	Clockwise to +90°
+	2
+	Anticlockwise to -90°
+	3
+	Return to center
+	________________
+
+
+Bluetooth App
+1. Download Serial Bluetooth Terminal (Android) or Bluetooth Terminal (iOS)
+2. Go to phone Bluetooth settings → pair HC-05 → PIN is 1234 or 0000
+3. Open app → connect to HC-05
+4. Send 1, 2, or 3
