@@ -1,29 +1,47 @@
-# dish-sorter
-hi, so this is basically the documentation of a project i made using arduino uno. \
+# Dish Sorter
 
-some external plugins i used were: \
-LiveOV7670 by Indrekkluk. \
-Google Teachable Machine (tensorflow model). \
-\
-\
-\
-the components used: \
-circuit 1 (for camera): \
-Arduino UNO R3 \
-OV7670 Camera \
-Breadboard \
-\
-circuit 2: \
-HC-05 Bluetooth \
-Arduino UNO R3 \
-Servo motor SG90 \
-Breadboard \
-Battery holder \
-\
-\
-\
-\
-credentials:\
--teachable machine ai trained by yashwini \
+## Overview
+This project is an automated sorting system that uses a TensorFlow Lite model to distinguish between spoons and forks, and physically separates them using a servo-based mechanism.
 
-each folder in this repository is provided with a .txt file briefly explaining the contents, along with a demonstration video.
+---
+
+## Demo
+[Watch Full Demo](assets/fulldemo.mp4)
+
+### Component Demonstrations
+- [Camera](assets/camera.mp4)  
+- [AI](assets/ai.mp4)  
+- [Servo](assets/servo.mp4)  
+
+---
+
+## Documentation
+[Learn more about each component](docs/)
+
+---
+
+## System Components
+
+### Circuit 1 – Camera
+- Arduino UNO R3  
+- OV7670 Camera  
+- Breadboard  
+
+### Circuit 2 – Actuation
+- Arduino UNO R3  
+- HC-05 Bluetooth Module  
+- SG90 Servo Motor  
+- Breadboard  
+- Battery Holder  
+
+---
+
+## Technologies & Tools
+- TensorFlow Lite (via Google Teachable Machine)  
+- LiveOV7670 by Indrekkluk  
+
+---
+
+## Credits
+- AI model trained using Google Teachable Machine  
+- Dataset/model training by Yashwini  
